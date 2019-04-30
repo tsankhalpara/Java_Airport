@@ -3,13 +3,15 @@ describe ( "Weather", function() {
 
   describe ("When stormy", function() {
     it ("returns true", function() {
-      expect(weather.isStormy(7)).toEqual(true);
+      spyOn(weather,'isStormy').and.returnValue(true);
+      expect(weather.isStormy()).toEqual(true);
     });
   });
 
   describe ("When not stormy", function() {
     it ("returns false", function() {
-      expect(weather.isStormy(3)).toEqual(false);
+      spyOn(weather,'isStormy').and.returnValue(false);
+      expect(weather.isStormy()).toEqual(false);
     });
   });
 
