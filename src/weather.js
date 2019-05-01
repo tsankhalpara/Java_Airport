@@ -1,10 +1,9 @@
 function Weather() {
-
+  this._CHANCE = 0.5;
 };
 
 
 
 Weather.prototype.isStormy = function () {
-  var x = (Math.floor(Math.random() * 10));
-  return (x > 6);
+  return ( Math.random() > this._CHANCE );
 };

@@ -1,16 +1,15 @@
-function Airport(){
-  this.capacity = 0;
+function Airport() {
   this.planes = [];
+  this._CHANCE = 0.5;
 };
 
 Airport.prototype.isStormy = function () {
-  var x = (Math.floor(Math.random() * 10));
-  return (x > 6);
+  return (Math.random() > this._CHANCE);
 };
 
 Airport.prototype.land = function (plane) {
   if (this.isStormy() === true) {
-    throw { "Too stormy to land!" };
+    return "Too stormy to land!";
   }
   else {
     return this.planes.push(plane);
